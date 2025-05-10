@@ -12,12 +12,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 @keyframes slideDown {
   0% {
@@ -57,4 +57,11 @@ body {
 
 .navbar-link {
   @apply text-green-600 hover:text-green-800 transition;
+  color: #ffffff;
+  
 }
+
+/* .nav {
+  background-color: oklch(.278 .033 256.848) !important;
+  color: #ffffff;
+} */
