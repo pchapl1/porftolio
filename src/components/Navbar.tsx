@@ -10,7 +10,7 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <nav className="nav fixed top-0 left-0 w-full shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         
         {/* Logo */}

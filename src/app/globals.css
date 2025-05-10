@@ -12,12 +12,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 @keyframes slideDown {
   0% {
@@ -28,6 +28,21 @@
     opacity: 1;
     transform: translateY(0)
   }
+}
+
+@keyframes fadeScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeScale {
+  animation: fadeScale 0.3s ease-out forwards;
 }
 
 body {
@@ -42,4 +57,11 @@ body {
 
 .navbar-link {
   @apply text-green-600 hover:text-green-800 transition;
+  color: #ffffff;
+  
 }
+
+/* .nav {
+  background-color: oklch(.278 .033 256.848) !important;
+  color: #ffffff;
+} */
