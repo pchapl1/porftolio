@@ -1,12 +1,20 @@
 'use client';
 import Image from "next/image";
 import Hero from "@/components/Hero";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ContactForm from "@/components/ContactForm";
 import Modal from "@/components/Modal";
 
 
 export default function Home() {
+
+  useEffect(() => {
+    // Check user's system dark mode preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
 
   const [ showContactForm, setShowContactForm ] = useState(false);
   const openContactForm = () => setShowContactForm(true);

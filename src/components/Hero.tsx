@@ -10,28 +10,15 @@ interface HeroProps {
 
 export default function Hero({ onContactClick }: HeroProps) {
 
-  // const [ isFormSpreeReady, setIsFormSpreeReady ] = useState(false)
-  // useEffect(()=> {
-  //   if (process.env.NEXT_PUBLIC_FORMSPREE_ID) {
-  //     setIsFormSpreeReady(true);
-  //   } else {
-  //     setIsFormSpreeReady(false);
-  //   }
-  // }, []);
-
-  // if (!isFormSpreeReady) {
-  //   return <div>Loading...</div>
-  // }
-
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-white to-gray-100 px-4 text-center">
+    <section className="relative z-10 flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-white to-gray-100 px-4 text-center">
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="text-5xl sm:text-6xl font-extrabold leading-tight mb-6"
       >
-        Hi, I'm <span className="text-blue-600">Your Name</span>
+        Hi, I'm <span className="text-blue-600">Phil</span>
       </motion.h1>
 
       <motion.p
