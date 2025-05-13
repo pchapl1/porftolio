@@ -38,6 +38,11 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
       return;
     }
 
+    if (!FORM_SPREE_URL) {
+        setError("Formspree URL not configured.");
+        return;
+      }
+
     try {
         const res = await fetch(FORM_SPREE_URL, {
 
