@@ -1,16 +1,12 @@
+
 'use client';
 
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { useState } from 'react';
+import ContactForm from './ContactForm';
 
 export default function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log('Form submitted');
-    setIsModalOpen(false);
-  };
 
   return (
     <footer className="bg-gray-800 text-white py-8 mt-16 relative">
@@ -42,49 +38,11 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Modal */}
-      {isModalOpen && (
-        
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 transition-opacity duration-300">
-            <div className="bg-white p-8 rounded-lg w-96 shadow-lg transform transition-all duration-300 scale-95 opacity-0 animate-fadeScale">
-            <h2 className="text-2xl mb-4 text-gray-800">Contact Me</h2>
-            <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-                <input
-                type="text"
-                placeholder="Your Name"
-                className="border border-gray-300 p-2 rounded text-gray-800 placeholder-gray-400"
-                required
-                />
-                <input
-                type="email"
-                placeholder="Your Email"
-                className="border border-gray-300 p-2 rounded text-gray-800 placeholder-gray-400"
-                required
-                />
-                <textarea
-                placeholder="Your Message"
-                className="border border-gray-300 p-2 rounded text-gray-800 placeholder-gray-400"
-                rows={4}
-                required
-                ></textarea>
-                <button
-                type="submit"
-                className="bg-gray-800 text-white py-2 rounded hover:bg-gray-700 transition"
-                >
-                Send
-                </button>
-                <button
-                type="button"
-                onClick={() => setIsModalOpen(false)}
-                className="text-gray-500 hover:underline text-sm mt-2"
-                >
-                Cancel
-                </button>
-            </form>
-            </div>
-        </div>
-        )}
+      {/* Reusable ContactForm modal */}
+      {/* <ContactForm isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSuccess={()=> setIsModalOpen(false)} /> */}
+      <ContactForm isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
     </footer>
   );
 }
+
