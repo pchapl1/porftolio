@@ -49,7 +49,11 @@ export default function Hero({ onContactClick }: HeroProps) {
         transition={{ delay: 0.4, duration: 0.6 }}
       >
         <button
-          onClick={onContactClick} // Call onContactClick prop on click
+          onClick={()=> {
+            console.log("hero contact clicked");
+            onContactClick();
+
+            }} // Call onContactClick prop on click
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full text-lg transition-all duration-300 shadow-lg"
         >
           Contact Me
@@ -57,8 +61,8 @@ export default function Hero({ onContactClick }: HeroProps) {
       </motion.div>
 
       {/* Optional: Decorative Blobs or Background Effects */}
-      <div className="absolute top-0 left-0 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-4000"></div>
+      <div className="absolute top-0 left-0 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob z-[-1]"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-100 rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob animation-delay-4000 z-[-1]"></div>
     </section>
   );
 }
