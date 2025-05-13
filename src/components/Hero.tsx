@@ -1,13 +1,28 @@
 // components/Hero.tsx
 "use client";
-
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { div } from "framer-motion/client";
 
 interface HeroProps {
   onContactClick: () => void;
 }
 
 export default function Hero({ onContactClick }: HeroProps) {
+
+  // const [ isFormSpreeReady, setIsFormSpreeReady ] = useState(false)
+  // useEffect(()=> {
+  //   if (process.env.NEXT_PUBLIC_FORMSPREE_ID) {
+  //     setIsFormSpreeReady(true);
+  //   } else {
+  //     setIsFormSpreeReady(false);
+  //   }
+  // }, []);
+
+  // if (!isFormSpreeReady) {
+  //   return <div>Loading...</div>
+  // }
+
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-white to-gray-100 px-4 text-center">
       <motion.h1

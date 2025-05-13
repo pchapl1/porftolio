@@ -3,6 +3,9 @@ import Image from "next/image";
 import Hero from "@/components/Hero";
 import { useState } from "react";
 import ContactForm from "@/components/ContactForm";
+import Modal from "@/components/Modal";
+
+
 export default function Home() {
 
   const [ showContactForm, setShowContactForm ] = useState(false);
@@ -20,7 +23,13 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Hero onContactClick = {openContactForm} />
-        <ContactForm isOpen={showContactForm} onClose={closeContactForm}/>
+        {/* <ContactForm isOpen={showContactForm} onClose={closeContactForm}/> */}
+                {/* Modal wrapping the ContactForm */}
+        <Modal isOpen={showContactForm} onClose={closeContactForm}>
+          <ContactForm isOpen={showContactForm} onClose={closeContactForm} />
+        </Modal>
+
+      
       </main>
  
     </div>

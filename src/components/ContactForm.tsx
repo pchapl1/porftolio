@@ -39,6 +39,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
     }
 
     if (!FORM_SPREE_URL) {
+        console.log('not found url')
         setError("Formspree URL not configured.");
         return;
       }
