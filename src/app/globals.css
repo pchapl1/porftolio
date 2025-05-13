@@ -104,11 +104,11 @@ body {
   animation: slideDown 0.3s ease-out forwards;
 }
 
-.navbar-link {
-  @apply text-green-600 hover:text-green-800 transition;
+/* .navbar-link {
+  @apply text-blue-600 hover:text-blue-800 transition;
   color: #ffffff;
   
-}
+} */
 
 .nav {
   background-color: var(--primary-color) !important;

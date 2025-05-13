@@ -14,7 +14,7 @@ export default function Footer() {
         <p className="text-lg font-serif">&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
         <div className="mt-6 flex justify-center space-x-6">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/pchapl1"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transform hover:scale-125 transition duration-300"
@@ -22,7 +22,7 @@ export default function Footer() {
             <FaGithub className="w-8 h-8" />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://www.linkedin.com/in/phillip-chaplin-501673152/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transform hover:scale-125 transition duration-300"
@@ -38,8 +38,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Reusable ContactForm modal */}
-      {/* <ContactForm isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSuccess={()=> setIsModalOpen(false)} /> */}
       <ContactForm isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
     </footer>

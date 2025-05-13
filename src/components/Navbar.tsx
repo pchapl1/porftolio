@@ -33,19 +33,19 @@ export default function Navbar() {
         >
           {/* Top bar */}
           <span
-            className={`absolute block h-0.5 w-8 bg-gray-800 transition-all duration-300 ease-in-out ${
+            className={`absolute block h-0.5 w-8 bg-white shadow-sm shadow-black/10 transition-all duration-300 ease-in-out ${
               menuOpen ? "rotate-45" : "-translate-y-2"
             }`}
           />
           {/* Middle bar */}
           <span
-            className={`absolute block h-0.5 w-8 bg-gray-800 transition-all duration-300 ease-in-out ${
+            className={`absolute block h-0.5 w-8 bg-white shadow-sm shadow-black/10 transition-all duration-300 ease-in-out ${
               menuOpen ? "opacity-0" : "opacity-100"
             }`}
           />
           {/* Bottom bar */}
           <span
-            className={`absolute block h-0.5 w-8 bg-gray-800 transition-all duration-300 ease-in-out ${
+            className={`absolute block h-0.5 w-8 bg-white shadow-sm shadow-black/10 transition-all duration-300 ease-in-out ${
               menuOpen ? "-rotate-45" : "translate-y-2"
             }`}
           />
@@ -67,9 +67,9 @@ export default function Navbar() {
         } md:hidden`}
       >
         <div className="flex flex-col mt-24 space-y-8 px-6 text-lg">
-          <Link href="#about" onClick={closeMenu} className=" navbar-link hover:text-blue-600 transition">About</Link>
-          <Link href="#projects" onClick={closeMenu} className=" navbar-link hover:text-blue-600 transition">Projects</Link>
-          <Link href="#contact" onClick={closeMenu} className=" navbar-link hover:text-blue-600 transition">Contact</Link>
+          <Link href="#about" onClick={closeMenu} className=" text-black navbar-link hover:text-blue-600 transition">About</Link>
+          <Link href="#projects" onClick={closeMenu} className="text-black navbar-link hover:text-blue-600 transition">Projects</Link>
+          <Link href="#contact" onClick={closeMenu} className="text-black navbar-link hover:text-blue-600 transition">Contact</Link>
         </div>
       </div>
     </nav>
