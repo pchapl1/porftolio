@@ -14,6 +14,11 @@
   --text-dark: #222222; /* Text color for dark mode */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* Body Styling */
 body {
   background-color: var(--background-light);
