@@ -1,11 +1,16 @@
 'use client';
 
+import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import { useState, useEffect } from "react";
 import ContactForm from "@/components/ContactForm";
 import Modal from "@/components/Modal";
-import ProjectSection from "@/components/ProjectSection";
 
+
+const ProjectSection = dynamic( ()=> import('@/components/ProjectSection'), {
+  ssr: false,
+  loading: ()=> <div className="text-gray-500 mt-20">Loading projects...</div>,
+})
 
 export default function Home() {
 
@@ -34,12 +39,13 @@ export default function Home() {
         <ContactForm isOpen={showContactForm} onClose={closeContactForm} />
       </Modal>
 
-      {/* Project Section: stacked underneath */}
-      <section className="px-8 sm:px-20 py-20">
+      {/* 👇 Lazy-loaded project section */}
+      <div id="projects" className="w-full">
         <ProjectSection />
-      </section>
+      </div>
 
     </div>
+
   );
 
 }
