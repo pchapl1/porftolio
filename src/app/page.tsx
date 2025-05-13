@@ -1,9 +1,10 @@
 'use client';
-import Image from "next/image";
+
 import Hero from "@/components/Hero";
 import { useState, useEffect } from "react";
 import ContactForm from "@/components/ContactForm";
 import Modal from "@/components/Modal";
+import ProjectSection from "@/components/ProjectSection";
 
 
 export default function Home() {
@@ -19,27 +20,26 @@ export default function Home() {
   const [ showContactForm, setShowContactForm ] = useState(false);
   const openContactForm = () => setShowContactForm(true);
   const closeContactForm = () => setShowContactForm(false);
-  // const handleContactClick = () => {
-  //   setShowContactForm(true);
-  // }
-
-  // const closeContactForm = () => {
-  //   setShowContactForm(false);
-  // }
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Hero onContactClick = {openContactForm} />
-        {/* <ContactForm isOpen={showContactForm} onClose={closeContactForm}/> */}
-                {/* Modal wrapping the ContactForm */}
-        <Modal isOpen={showContactForm} onClose={closeContactForm}>
-          <ContactForm isOpen={showContactForm} onClose={closeContactForm} />
-        </Modal>
-
+    <div className="font-[family-name:var(--font-geist-sans)]">
       
-      </main>
- 
+      {/* Hero Section: Fullscreen & centered */}
+      <section className="min-h-screen flex items-center justify-center px-8 sm:px-20">
+        <Hero onContactClick={openContactForm} />
+      </section>
+
+      {/* Modal for Contact Form */}
+      <Modal isOpen={showContactForm} onClose={closeContactForm}>
+        <ContactForm isOpen={showContactForm} onClose={closeContactForm} />
+      </Modal>
+
+      {/* Project Section: stacked underneath */}
+      <section className="px-8 sm:px-20 py-20">
+        <ProjectSection />
+      </section>
+
     </div>
   );
+
 }
