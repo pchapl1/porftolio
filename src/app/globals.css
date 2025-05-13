@@ -1,9 +1,27 @@
 @import "tailwindcss";
 
-:root {
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
+} */
+
+:root {
+  --primary-color: oklch(.278 .033 256.848); /* Your color */
+  --background-light: #f7f7f7;  /* Light mode background */
+  --background-dark: #333333;  /* Dark mode background */
+  --text-light: #ffffff; /* Text color for light mode */
+  --text-dark: #222222; /* Text color for dark mode */
 }
+
+/* Body Styling */
+body {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
 
 @theme inline {
   --color-background: var(--background);
@@ -57,6 +75,8 @@
   }
 }
 
+
+
 .animate-blob {
   animation: blob 7s infinite;
 }
@@ -85,7 +105,7 @@ body {
   
 }
 
-/* .nav {
-  background-color: oklch(.278 .033 256.848) !important;
+.nav {
+  background-color: var(--primary-color) !important;
   color: #ffffff;
-} */
+}
